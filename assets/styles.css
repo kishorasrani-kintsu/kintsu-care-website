@@ -13,7 +13,13 @@ body { background:#fff; color:var(--navy); }
 .soft-line { border-color: rgba(91,100,117,.16); }
 .kintsugi-seam { stroke: var(--gold); }
 .kintsugi-glow { filter: drop-shadow(0 0 14px rgba(198,151,31,.35)); }
-.ticker-track { width: max-content; animation: ticker-scroll 28s linear infinite; }
+.ticker-bar { position: relative; height: 2.25rem; overflow: hidden; }
+.ticker-track { position: absolute; top: 0; bottom: 0; left: 0; display: flex; align-items: center; width: max-content; animation: ticker-scroll 16s linear infinite; }
 .ticker-track:hover { animation-play-state: paused; }
-@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes ticker-scroll {
+  0% { transform: translateX(100vw); }
+  20% { transform: translateX(100vw); }
+  80% { transform: translateX(-100%); }
+  100% { transform: translateX(-100%); }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
