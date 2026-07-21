@@ -13,4 +13,7 @@ body { background:#fff; color:var(--navy); }
 .soft-line { border-color: rgba(91,100,117,.16); }
 .kintsugi-seam { stroke: var(--gold); }
 .kintsugi-glow { filter: drop-shadow(0 0 14px rgba(198,151,31,.35)); }
+.ticker-track { width: max-content; animation: ticker-scroll 28s linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
