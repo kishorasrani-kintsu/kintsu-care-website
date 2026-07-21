@@ -67,4 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initJourneyPreview();
   wireMailtoForm('waitlistForm', 'Kintsu Care waitlist');
   wireMailtoForm('partnerForm', 'Kintsu Care alliance enquiry');
+  wireMailtoForm('careersForm', 'Kintsu Care job application');
 });
