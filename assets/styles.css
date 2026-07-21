@@ -16,6 +16,7 @@ body { background:#fff; color:var(--navy); }
 .ticker-bar { position: relative; height: 2.25rem; overflow: hidden; }
 .ticker-track { position: absolute; top: 0; bottom: 0; left: 0; display: flex; align-items: center; width: max-content; animation: ticker-scroll 16s linear infinite; }
 .ticker-track:hover { animation-play-state: paused; }
+.img-fade { -webkit-mask-image: radial-gradient(ellipse 88% 88% at 50% 50%, #000 66%, transparent 100%); mask-image: radial-gradient(ellipse 88% 88% at 50% 50%, #000 66%, transparent 100%); }
 @keyframes ticker-scroll {
   0% { transform: translateX(100vw); }
   20% { transform: translateX(100vw); }
