@@ -31,11 +31,13 @@ function wireMailtoForm(formId, subjectPrefix) {
     const data = new FormData(form);
     const lines = [];
     for (const [key, value] of data.entries()) {
-      if (!value) continue;
+      if (!value || typeof value !== 'string') continue;
       const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase());
       lines.push(label + ': ' + value);
     }
-    const subject = encodeURIComponent(subjectPrefix + (data.get('persona') ? ' — ' + data.get('persona') : ''));
+    const personaValue = data.get('persona');
+    const persona = typeof personaValue === 'string' ? personaValue : '';
+    const subject = encodeURIComponent(subjectPrefix + (persona ? ' — ' + persona : ''));
     const body = encodeURIComponent(lines.join('\n'));
     window.location.href = 'mailto:info@kintsucare.in?subject=' + subject + '&body=' + body;
   });
